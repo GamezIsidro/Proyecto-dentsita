@@ -76,10 +76,4 @@ Este es un sistema web desarrollado para gestionar las citas de un consultorio d
 - Restricción para evitar duplicado de citas
 - Protección contra acceso directo a rutas sin autenticación
 
-## Capturas de pantalla
 
-Puedes agregar aquí imágenes de la interfaz en funcionamiento.
-
-## Licencia
-
-Este proyecto es de uso académico. Puedes modificarlo con fines educativos.
