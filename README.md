@@ -1,61 +1,85 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistema de Gestión para Consultorio Dental
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este es un sistema web desarrollado para gestionar las citas de un consultorio dental. Permite a los doctores registrar horarios de atención y a los pacientes agendar una única cita activa de forma segura y eficiente.
 
-## About Laravel
+## Características principales
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Inicio de sesión con validación de roles (doctor o paciente).
+- Redirección automática a la pantalla correspondiente según el tipo de usuario.
+- El doctor puede registrar horarios disponibles (slots).
+- El paciente puede agendar una cita en los horarios disponibles.
+- Restricción para que el paciente no tenga más de una cita activa.
+- Protección contra navegación por URL sin autenticación.
+- Interfaz amigable y validación de formularios.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tecnologías utilizadas
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Laravel (PHP Framework)
+- Blade (motor de vistas)
+- MariaDB (base de datos)
+- Tailwind CSS (estilos)
 
-## Learning Laravel
+## Requisitos
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- PHP 8.1 o superior
+- Composer
+- Node.js y npm
+- MariaDB
+- Navegador web actualizado
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Instalación
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/consultorio-dental.git
+   cd consultorio-dental
+   ```
 
-## Laravel Sponsors
+2. Instalar dependencias de PHP y Node:
+   ```bash
+   composer install
+   npm install && npm run dev
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+3. Configurar el archivo `.env`:
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-### Premium Partners
+4. Crear la base de datos y ejecutar migraciones:
+   ```bash
+   php artisan migrate
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+5. Iniciar el servidor de desarrollo:
+   ```bash
+   php artisan serve
+   ```
 
-## Contributing
+## Roles del sistema
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Doctor
+- Inicia sesión
+- Crea horarios disponibles
+- Consulta las citas agendadas por los pacientes
 
-## Code of Conduct
+### Paciente
+- Inicia sesión
+- Visualiza los horarios disponibles
+- Agenda una sola cita activa
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Seguridad
 
-## Security Vulnerabilities
+- Validación de credenciales y roles al iniciar sesión
+- Redirección basada en tipo de usuario
+- Restricción para evitar duplicado de citas
+- Protección contra acceso directo a rutas sin autenticación
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Capturas de pantalla
 
-## License
+Puedes agregar aquí imágenes de la interfaz en funcionamiento.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Licencia
+
+Este proyecto es de uso académico. Puedes modificarlo con fines educativos.
